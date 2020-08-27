@@ -27,7 +27,7 @@ jobs:
       with:
           personal_token: ${{ secrets.PORTFOLIO_SECRET }}
           src_path: public/*
-          dst_path: work/map-animator/
+          dst_path: work/midi-controller/
           dst_owner: franknoirot
           dst_repo_name: franknoirot.co
   
@@ -47,6 +47,6 @@ jobs:
       with:
           personal_token: ${{ secrets.PORTFOLIO_SECRET }}
           src_path: portfolio-config.json
-          dst_path: _data/work/mapAnimator.json
+          dst_path: _data/work/midiController.json
           dst_owner: franknoirot
           dst_repo_name: franknoirot.co
