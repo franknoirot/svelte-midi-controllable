@@ -1,6 +1,11 @@
 <script>
+	import Plotta from 'plotta.js'
+	import { onMount } from 'svelte'
 	import DialMIDI from './components/DialMIDI.svelte'
 	let controls = []
+	let canvas
+	let p
+
 
 	function addControl() {
 		const hue = Math.random() * 360 + 'deg'

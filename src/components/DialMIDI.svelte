@@ -44,7 +44,7 @@
         </div>
         <div class="dial-wrap">
             <label class="dial-bg" for={`dial-${ id }`}>
-                <div class="dial-line" style={`transform: var(--init-trans) rotate(${ (normalizedOutput - .5) * 180 }deg`}></div>
+                <div class="dial-line" style={`transform: var(--init-trans) rotate(${ ((normalizedOutput || 0) - .5) * 180 }deg`}></div>
             </label>
             <input class="dial" id={`dial-${ id }`} type="range" step="any" min={ min } max={ max } bind:value={ output } />
         </div>
