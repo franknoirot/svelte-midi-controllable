@@ -12,8 +12,8 @@
 
     let midiInput = false
 
-    $: {
-        dispatch('input', output)
+    $: if(output) {
+        dispatch('midiinput', output)
     }
 
     const dispatch = createEventDispatcher()

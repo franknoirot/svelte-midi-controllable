@@ -10,15 +10,15 @@
 		controls = [...controls, { color: `hsl(${hue}, ${sat}, ${lit})` }]
 	}
 
-	function getCtrl(index, fallbackVal) {
-		return (controls[index] && controls[index].value !== undefined) ? controls[index].value : fallbackVal
+	function getCtrl(ctrl, fallbackVal) {
+		return (ctrl && ctrl.value !== undefined) ? ctrl.value : fallbackVal
 	}
 </script>
 
 <main>
 	<section class='grid'>
 		{#each controls as control, i (control.color+i)}
-			<DialMIDI id={ i } color={ control.color } on:input={ ({ detail }) => {
+			<DialMIDI id={ i } color={ control.color } on:midiinput={ ({ detail }) => {
 				control.value = detail
 				controls = [...controls]	
 			}} />
@@ -27,8 +27,8 @@
 	</section>
 	<section>
 		<svg viewBox='0 0 20 10' style='max-width: 720px; border: solid 4px;'>
-			<rect x={ getCtrl(0, 5) }  y={ getCtrl(1, 2.5) }  width={ getCtrl(2, 10) } height={ getCtrl(3, 5) }
-				  fill={`hsl(${ getCtrl(4, 80) }deg, ${ getCtrl(5, 60) }%, ${ getCtrl(6, 60) }%)`}  />
+			<rect x={ getCtrl(controls[0], 5) }  y={ getCtrl(controls[1], 2.5) }  width={ getCtrl(controls[2], 10) } height={ getCtrl(controls[3], 5) }
+				  fill={`hsl(${ getCtrl(controls[4], 80) }deg, ${ getCtrl(controls[5], 60) }%, ${ getCtrl(controls[6], 60) }%)`}  />
 		</svg>
 	</section>
 </main>
