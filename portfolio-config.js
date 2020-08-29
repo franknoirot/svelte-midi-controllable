@@ -15,7 +15,7 @@ function getConfig() {
         "path": "/midi-controller",
         "themeColor": "hsl(310deg, 60%, 65%)",
         "tools": "Svelte.js, WebMIDI API",
-        "image": false
+        "image": '/img/2020-08-28-web_midi.jpg'
     }
 }
 
