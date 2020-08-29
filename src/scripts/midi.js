@@ -88,3 +88,4 @@ function normRange(val,min,max) {
     let range = max-min;
     return (val-min)/range;
   }
+  
