@@ -76,7 +76,6 @@ export function listenForMIDIInput(dialContainer, button, setCallback, inputCall
     function onDeviceInput({ input, value }) {
         const foundCb = midiCallbacks.find(({ input: inputVal }) => inputVal === input)
 
-        console.log(midiCallbacks, foundCb)
         if (foundCb) {
           foundCb.cb(input, normRange(value, 0, 127))
         }

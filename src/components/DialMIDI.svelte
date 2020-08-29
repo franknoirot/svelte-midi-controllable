@@ -1,15 +1,22 @@
 <script>
+    import { createEventDispatcher } from 'svelte'
     import MIDIIcon from './MIDIIcon.svelte'
     import { listenForMIDIInput } from '../scripts/midi.js'
     export let id = 0
     export let color = 'hsl(320deg, 60%, 60%)'
     let containerDOM
-    let min = -30
-    let max = 52
+    let min = 0
+    let max = 100
     let output = (max - min) / 2 - min
     $: normalizedOutput = (output - min) / (max - min)
 
     let midiInput = false
+
+    $: {
+        dispatch('input', output)
+    }
+
+    const dispatch = createEventDispatcher()
 
     function setMIDICallback(input) {
         if (!midiInput) {
