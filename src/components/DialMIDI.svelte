@@ -19,6 +19,7 @@
 
     const dispatch = createEventDispatcher()
 
+    // this callback gets passed into MIDIAccess but lives here where reactivity reigns, best of both worlds
     function setMIDICallback(input) {
         if (!midiInput) {
             midiInput = input
