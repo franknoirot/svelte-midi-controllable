@@ -12,6 +12,7 @@
 
     let midiInput = false
 
+    // emits a midiinput event to App.svelte every time output updates
     $: if(output) {
         dispatch('midiinput', output)
     }
