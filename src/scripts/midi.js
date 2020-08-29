@@ -83,9 +83,8 @@ export function listenForMIDIInput(dialContainer, button, setCallback, inputCall
     }
 }
 
-
+// utility function for converting any range into 0 to 1
 function normRange(val,min,max) {
     let range = max-min;
     return (val-min)/range;
   }
-  
