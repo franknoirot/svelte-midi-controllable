@@ -1,5 +1,4 @@
 <script>
-	import Plotta from 'plotta.js'
 	import { onMount } from 'svelte'
 	import DialMIDI from './components/DialMIDI.svelte'
 	let controls = []
